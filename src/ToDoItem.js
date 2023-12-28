@@ -6,7 +6,10 @@ import './ToDoItem.css';
 function ToDoItem( {taskValue, completed, onComplete, onDelete} ){
     return(
       <li className="ToDoItem">
-        <CompleteIcon />
+        <CompleteIcon 
+          completed={completed}
+          onComplete={onComplete}  
+        />
         {/* <span 
           className={`Icon Icon-check ${completed && "Icon-check--active"}`} 
           onClick={onComplete}
@@ -15,7 +18,9 @@ function ToDoItem( {taskValue, completed, onComplete, onDelete} ){
         </span> */}
         <p className={`ToDoItem-p ${completed && "ToDoItem-p--complete"}`}>{taskValue}</p>
         {/* <span className="Icon Icon-delete" onClick={onDelete}>X</span> */}
-        <DeleteIcon />
+        <DeleteIcon 
+          onDelete={onDelete}
+        />
       </li>
     );
   }
